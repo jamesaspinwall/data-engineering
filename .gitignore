@@ -1,0 +1,7 @@
+bigdata/log
+bigdata/tmp
+bigdata/db/*.sqlite3
+bigdata/.rspec
+bigdata/spec/tmp
+bigdata/.bundle
+.rvmrc
