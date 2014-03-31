@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :merchant do
-    name 'Costco'
-    address '123 Main Street'
+    name { Faker::Name.name }
+    address {"#{Faker::Address.street_address} #{Faker::Address.city}, #{Faker::Address.state_abbr} #{Faker::Address.zip}"}
   end
 end

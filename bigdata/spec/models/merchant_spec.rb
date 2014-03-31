@@ -7,11 +7,6 @@ describe Merchant do
     expect(merchant).to be_valid
   end
 
-  #it "checks extended AR object" do
-  #  merchant = Merchant.new(name: 'Sears',address:'Main Street',city:'Herndon')
-  #  expect(merchant).to have(1).errors_on(:city)
-  #end
-
   it "is invalid without name" do
     merchant = FactoryGirl.build(:merchant, name: nil)
     expect(merchant).to be_invalid
@@ -23,7 +18,7 @@ describe Merchant do
   end
 
   it "is invalid duplicate names" do
-    FactoryGirl.create(:merchant)
+    merchant = Merchant.create(name: 'Sears', address: 'Main Street')
     merchant = Merchant.new(name: 'Sears', address: 'Main Street')
     expect(merchant).to have(1).error_on(:name)
   end
