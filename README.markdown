@@ -7,7 +7,12 @@
 
 ## Run server
 1. cd bigdata
-1. RAILS_ENV = development rails s 
+1. RAILS_ENV=development rails s 
+
+## Upload file
+1. Load url 'http://localhost:3000/orders/upload'
+1. Select the file to upload
+1. Click Upload button
 
 ## Run tests
 1. Only model tests are implemented. Run 'bundle exec rspec spec/models/'
