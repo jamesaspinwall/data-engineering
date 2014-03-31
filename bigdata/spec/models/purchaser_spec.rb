@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Purchaser do
 
   it "is valid with name" do
-    purchaser = FactoryGirl.build(:purcharser)
+    purchaser = FactoryGirl.build(:purchaser)
     expect(purchaser).to be_valid
   end
 
@@ -12,10 +12,9 @@ describe Purchaser do
     expect(purchaser).to be_invalid
   end
 
-
   it "is invalid duplicate names" do
-    purchaser = Merchant.create(name: 'John')
-    purchaser = Merchant.new(name: 'John')
+    purchaser_first = FactoryGirl.create(:purchaser)
+    purchaser = Purchaser.new(name: purchaser_first.name)
     expect(purchaser).to have(1).error_on(:name)
   end
 end
