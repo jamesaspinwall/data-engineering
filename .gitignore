@@ -5,3 +5,4 @@ bigdata/.rspec
 bigdata/spec/tmp
 bigdata/.bundle
 .rvmrc
+bigdata/.idea

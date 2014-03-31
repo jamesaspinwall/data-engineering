@@ -1,0 +1,17 @@
+<% if flash[:notice] %>
+    <div id="error_explanation">
+      <ul>
+        <% if flash[:error] %>
+            <li><%= "#{flash[:notice]} #{flash[:error]}" %></li>
+        <% else %>
+            <li><%= flash[:notice] %></li>
+          <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= form_tag({controller: "uploads", action: "orders"}, multipart: true) do %>
+    <%= file_field_tag 'purchases_file' %>
+    <p/>
+    <%= submit_tag "Upload" %>
+<% end %>

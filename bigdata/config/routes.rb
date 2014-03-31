@@ -1,12 +1,14 @@
 Bigdata::Application.routes.draw do
   resources :items
 
+  get 'orders/upload' => 'orders#upload'
   resources :orders
 
   resources :purchasers
 
   resources :merchants
 
+  post 'uploads/orders' => 'uploads#orders'
   resources :uploads
 
   # The priority is based upon order of creation: first created -> highest priority.
