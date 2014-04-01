@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Upload</th>
+      <th>Merchant</th>
       <th>Purchaser</th>
       <th>Item</th>
       <th>Quantity</th>
@@ -16,9 +17,10 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= Upload.find(order.upload_id).filename %></td>
-        <td><%= Purchaser.find(order.purchaser_id).name %></td>
-        <td><%= Item.find(order.item_id).description %></td>
+        <td><%= order.upload.filename %></td>
+        <td><%= order.item.merchant.name %></td>
+        <td><%= order.purchaser.name %></td>
+        <td><%= order.item.description %></td>
         <td><%= order.quantity %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>

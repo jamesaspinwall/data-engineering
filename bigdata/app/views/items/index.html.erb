@@ -15,7 +15,7 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= Merchant.find(item.merchant_id).name %></td>
+        <td><%= item.merchant.name %></td>
         <td><%= item.description %></td>
         <td><%= item.price %></td>
         <td><%= link_to 'Show', item %></td>

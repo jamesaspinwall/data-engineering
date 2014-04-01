@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  has_one :merchant
+  belongs_to :merchant
   has_many :orders
   validates_presence_of :description
   validates_presence_of :price
