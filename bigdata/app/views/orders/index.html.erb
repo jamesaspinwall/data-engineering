@@ -16,9 +16,9 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.upload_id %></td>
-        <td><%= order.purchaser_id %></td>
-        <td><%= order.item_id %></td>
+        <td><%= Upload.find(order.upload_id).filename %></td>
+        <td><%= Purchaser.find(order.purchaser_id).name %></td>
+        <td><%= Item.find(order.item_id).description %></td>
         <td><%= order.quantity %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>

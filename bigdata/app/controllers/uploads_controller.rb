@@ -81,11 +81,10 @@ class UploadsController < ApplicationController
         merchant = Merchant.find_or_create_by!(
             name: line[:merchant_name],
             address: line[:merchant_address])
-        item = Item.create!(
+        item = Item.find_or_create_by!(
+            merchant_id: merchant.id,
             description: line[:item_description],
             price: line[:item_price])
-
-        merchant.items << item
 
         order = Order.create!(
             quantity: line[:purchase_count])
