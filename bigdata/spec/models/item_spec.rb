@@ -21,10 +21,4 @@ describe Item do
     expect(item).to be_invalid
   end
 
-  it "is invalid duplicate description and price" do
-    item_first = FactoryGirl.create(:item)
-    item = Item.new(description: item_first.description)
-    expect(item).to have(1).error_on(:description)
-  end
-
 end
